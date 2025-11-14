@@ -44,4 +44,153 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (startIndex, mainIndex) {
+    return [this.starterMenu[startIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function (obj) {
+    console.log(obj);
+  },
+
+  orderPasta(ing1, ing2, ing3) {
+    console.log(
+      `Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
+
+  orderPizza(mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
+
+// console.log(
+//   restaurant.orderDelivery({
+//     time: '22:30',
+//     address: 'Bien Hoa',
+//     mainIndex: 2,
+//     startIndex: 2,
+//   })
+// );
+
+// Desutring arrays
+/* const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+const [x, y, z] = arr;
+console.log(x, y, z);
+
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+
+// Switching variables
+const temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary);
+
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
+
+console.log(restaurant.order(2, 0)); */
+
+/* const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+// console.log(restaurantName, hours, tags);
+
+const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
+
+// Mutating variables
+let a = 11;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
+
+// Nested objects
+const {
+  fri: { open, close },
+} = openingHours;
+// console.log(fri);
+console.log(open, close); */
+
+// Speard operator
+/* const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy array
+const mainMenu = [...restaurant.mainMenu];
+
+// Join two arrays or more
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// Iterables arrays, string, maps, sets, not objects
+const str = 'Jonas';
+const letters = [...str, '', 's'];
+console.log(letters);
+
+const ingredients = [prompt("Let' s make pasta! Ingredient 1?")]; */
+
+// Rest patterns
+// const arr = [1, 2, ...[3, 4]];
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
+
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.starterMenu,
+//   ...restaurant.mainMenu,
+// ];
+
+// console.log(pizza, risotto, otherFood);
+
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+// add(2, 3);
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// for (const item of menu) console.log(item);
+// for (const item of menu.entries()) console.log(item);
+
+// console.log([...menu.entries()]);
+
+const x = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
+]);
+
+const y = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
+const italianMexicanFusion = y.union(x);
+console.log(italianMexicanFusion);
